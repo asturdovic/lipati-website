@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/footer.css"; // Import af komponentens tilhørende styling
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram } from "react-icons/fa"; // Social media ikoner
 import logo from "../assets/images/Logo-lipati.png"; // Lipati logo
 
@@ -45,7 +46,7 @@ const Footer = () => {
           <div className="footer-col">
             <h4>02 / SHOP</h4>
             <ul>
-              <li><a href="/faq">FAQ</a></li>
+            <li><Link to="/faq">FAQ</Link></li>
               <li><a href="/not-found">Shipping & Returns</a></li>
               <li><a href="/not-found">Size Guide</a></li>
               <li><a href="/not-found">Privacy Policy</a></li>
@@ -105,14 +106,15 @@ const Footer = () => {
                 {section.label} <span>{openSection === index ? "−" : "+"}</span>
               </button>
               {openSection === index && (
-                <div className="accordion-content">
-                  {section.content.map((item, idx) =>
-                    typeof item === "string" ? (
-                      <li key={idx}><a href="/faq">{item}</a></li>
-                    ) : (
-                      <div key={idx}>{item}</div>
-                    )
-                  )}
+                  <div className="accordion-content">
+                   {section.content.map((item, idx) =>
+                  typeof item === "string" ? (
+                  <li key={idx}><Link to="/faq">{item}</Link></li>
+                   ) : (
+                   <div key={idx}>{item}</div>
+                  )
+                 )}
+
                 </div>
               )}
             </div>
