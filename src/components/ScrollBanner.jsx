@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/scrollBanner.css"; // Import af tilknyttet CSS for animation og layout
+import "../styles/ScrollBanner.css"; // Import af tilknyttet CSS for animation og layout
 
 // Funktionel komponent, der viser en kontinuerlig scrollende banner med kampagnetekst
 const ScrollBanner = () => {
