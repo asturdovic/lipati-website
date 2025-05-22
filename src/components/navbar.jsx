@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css"; // Import af styling til navbar
-import logo from "../assets/images/logo-lipati.png"; // Logo billede
+import logo from "../assets/images/Logo-lipati.png"; // Logo billede
 import promoImage from "../assets/images/women1.jpg"; // Billede brugt i dropdown
 import { FiShoppingCart } from "react-icons/fi"; // Ikon: indkøbskurv
 import { GiHamburgerMenu } from "react-icons/gi"; // Ikon: mobilmenu
