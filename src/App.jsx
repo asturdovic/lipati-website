@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />                 {/* Forside */}
         <Route path="/community" element={<CommunityPage />} /> {/* Community side */}
-        <Route path="/FAQ" element={<FAQ />} />               {/* FAQ side */}
+        <Route path="/faq" element={<FAQ />} />               {/* FAQ side */}
         <Route path="*" element={<NotFound />} />             {/* 404 fallback */}
       </Routes>
 

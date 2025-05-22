@@ -108,7 +108,7 @@ const Footer = () => {
                 <div className="accordion-content">
                   {section.content.map((item, idx) =>
                     typeof item === "string" ? (
-                      <li key={idx}><a href="/not-found">{item}</a></li>
+                      <li key={idx}><a href="/faq">{item}</a></li>
                     ) : (
                       <div key={idx}>{item}</div>
                     )
