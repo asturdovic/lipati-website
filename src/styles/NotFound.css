@@ -1,0 +1,85 @@
+/* === Wrapper til hele 404-siden - centreret både vertikalt og horisontalt === */
+.notfound-wrapper {
+    height: 100vh; /* Fylder hele højden af viewport */
+    background-color: #fcfbf6; /* Blød off-white baggrund */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeIn 0.8s ease; /* Indfade-effekt */
+  }
+  
+  /* 404-tallet med outline og bounce animation */
+  .outline-404 {
+    font-family: "Anton", sans-serif;
+    font-size: 8rem;
+    color: transparent; /* Kun outline */
+    -webkit-text-stroke: 2px #121212; /* Sort streg rundt */
+    margin: 0;
+    animation: bounce 1.2s ease; /* Let “bounce” effekt */
+  }
+  
+  /* Undertekst */
+  .notfound-sub {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.25rem;
+    color: #333;
+    margin: 1rem 0 2.5rem;
+  }
+  
+  /* Tilbage-linket som knap */
+  .return-link {
+    font-family: "Montserrat", sans-serif;
+    color: #121212;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.7rem 1.6rem;
+    border: 1.5px solid #121212;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Pilen til højre i knappen */
+  .return-link::after {
+    content: "→";
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+  
+  /* Hover-effekt: knap skifter farve og flytter lidt */
+  .return-link:hover {
+    background-color: #121212;
+    color: white;
+    transform: translateY(-1px);
+  }
+  
+  .return-link:hover::after {
+    transform: translateX(4px);
+  }
+  
+  /* === Animationer === */
+  
+  /* Fade in - glidende opad */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Bounce - subtil pulsering ved indlæsning af 404 */
+  @keyframes bounce {
+    0%   { transform: scale(0.9); opacity: 0.6; }
+    60%  { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  

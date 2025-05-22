@@ -1,0 +1,290 @@
+/* === QUIZ: Overordnet wrapper og titel === */
+
+.quiz-wrapper {
+  margin: 6rem auto 5rem;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.quiz-wrapper h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.8px;
+  color: #121212;
+}
+
+/* Quizspørgsmålstekst */
+.quiz-question {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  color: #2c2c2c;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* Quiz muligheder: layout og kort */
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Individuel svarmulighed */
+.quiz-option {
+  background-color: #ffffff;
+  border: 1.5px solid #dcdcdc;
+  border-radius: 14px;
+  padding: 1.3rem 1.8rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  min-width: 220px;
+  max-width: 260px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035);
+}
+
+.quiz-option:hover {
+  border-color: #0f0f0f;
+  color: #0f0f0f;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Valgt svar */
+.quiz-option.selected {
+  background-color: #ffffff;
+  color: #000;
+  border-color: #ffffff;
+  box-shadow: inset 0 0 0 3px #000000;
+}
+
+/* Ikoner (SVG eller emoji) i quizvalg */
+.emoji {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+/* Feedbacktekst efter valg */
+.quiz-response {
+  margin-top: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  max-width: 540px;
+  margin-inline: auto;
+  color: #3a3a3a;
+  animation: fadeIn 0.6s ease;
+  line-height: 1.7;
+}
+
+/* === MANIFEST-UNLOCK SEKTOR === */
+
+.manifest-unlock {
+  margin: 6rem auto;
+  padding: 0 1.5rem;
+}
+
+.manifest-unlock h3 {
+  font-family: "Anton", sans-serif;
+  font-size: 2.3rem;
+  margin: 4rem 0 2rem;
+  text-align: center;
+  color: #121212;
+}
+
+/* Layout for alle manifestkort */
+.manifest-values {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Manifestkort – låste og ulåste */
+.manifest-card {
+  background-color: #fafafa;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+  border: 1.5px dashed #d5d5d5;
+  padding: 1.8rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.manifest-card:hover {
+  border-color: #111;
+  background-color: #f6f6f6;
+}
+
+/* Animation ved unlock */
+.manifest-card.unlocked {
+  animation: fadeInUnlock 0.6s ease-in-out;
+}
+
+/* Titel og indhold i kort */
+.card-title {
+  font-family: "Anton", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.card-content {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* === IKONER === */
+
+.icon-img {
+  height: 5rem;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.lock-icon {
+  height: 2.2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.lock-icon.unlocked {
+  opacity: 1;
+}
+
+/* === ANIMATIONER === */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUnlock {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE STYLES (TABLET & MOBIL) === */
+
+@media (max-width: 768px) {
+  .quiz-wrapper {
+    padding: 0 1rem;
+    margin: 4rem auto 4rem;
+  }
+
+  .quiz-wrapper h2 {
+    font-size: 2.2rem;
+  }
+
+  .quiz-question {
+    font-size: 1.05rem;
+  }
+
+  .quiz-options {
+    gap: 1rem;
+  }
+
+  .quiz-option {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .emoji {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .quiz-response {
+    font-size: 0.95rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+
+  .manifest-unlock {
+    padding: 0 1rem;
+    margin: 4rem auto;
+  }
+
+  .manifest-unlock h3 {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+  }
+
+  .manifest-values {
+    gap: 1.2rem;
+  }
+
+  .manifest-card {
+    padding: 1.4rem;
+    border-radius: 14px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-content {
+    font-size: 0.95rem;
+  }
+
+  .icon-img {
+    height: 4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .lock-icon {
+    height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-wrapper h2 {
+    font-size: 1.9rem;
+  }
+
+  .quiz-question {
+    font-size: 1rem;
+  }
+
+  .quiz-option {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .manifest-unlock h3 {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+}

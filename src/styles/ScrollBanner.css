@@ -1,0 +1,38 @@
+/* === Hele banneret fylder bredde og skjuler overflow === */
+.scroll-banner {
+  width: 100%;
+  overflow: hidden;           /* Skjuler horisontal scrollbar */
+  background-color: #16b2e6;  /* Brand-blå baggrund */
+  padding: 10px 0;            /* Lodret padding for luft */
+  white-space: nowrap;        /* Forhindrer tekst i at wrappe */
+  border-top: 1px solid #ccc; /* Let kant øverst og nederst */
+  border-bottom: 1px solid #ccc;
+}
+
+/* Track der bevæger teksten fra højre mod venstre */
+.scroll-track {
+  display: flex;
+  width: fit-content;         /* Bredde til indholdet */
+  animation: scroll-left 160s linear infinite; /* Langsom, uendelig scroll */
+}
+
+/* Selve teksten i banneret */
+.scroll-content {
+  display: inline-block;
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  padding-right: 1rem;        /* Luft mellem gentagelser */
+  color: #FBF9E8;             /* Lys varm farve på teksten */
+  white-space: nowrap;        /* Sikrer én lang linje */
+  font-size: larger;          /* Lidt større tekst */
+}
+
+/* Animationen der trækker teksten mod venstre */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Flytter halvdelen af tekstbredden */
+  }
+}

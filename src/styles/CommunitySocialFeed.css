@@ -1,0 +1,118 @@
+/* === Sektion: Social Feed fra community === */
+.social-feed {
+  padding: 6rem 2rem;
+  background-color: #fcfbf6;
+  text-align: center;
+}
+
+/* Sektionstitel */
+.social-feed h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 2.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  color: #121212;
+}
+
+/* CTA-tekst under titel */
+.cta-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 2.8rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* === Gridlayout for billedvisning === */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: center;
+  place-items: center;
+}
+
+/* Hver enkelt billede-tegl */
+.social-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Billede i teglet */
+.social-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+/* Hover-effekt: let zoom og subtil tone */
+.social-tile:hover img {
+  transform: scale(1.04);
+  filter: brightness(0.85) grayscale(15%);
+}
+
+/* Overlay med brugernavn */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  opacity: 0;
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s ease;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+/* Gør overlay synligt ved hover */
+.social-tile:hover .overlay {
+  opacity: 1;
+}
+
+/* === Ekstern CTA-link til Instagram === */
+.insta-link {
+  display: inline-block;
+  margin-top: 2.5rem;
+  color: #121212;
+  font-weight: 500;
+  text-decoration: underline;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.insta-link:hover {
+  color: #16B2E6;
+}
+
+/* === Mobiljusteringer === */
+@media (max-width: 600px) {
+  .social-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .social-feed h2 {
+    font-size: 2.2rem;
+  }
+
+  .social-tile {
+    border-radius: 10px;
+  }
+
+  .overlay {
+    font-size: 0.8rem;
+  }
+}

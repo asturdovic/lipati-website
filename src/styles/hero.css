@@ -1,0 +1,11 @@
+/* === Hero sektion med fuld bredde og højde === */
+.hero {
+    width: 100vw; /* Fylder hele viewportens bredde */
+    height: 60vh; /* Højden fylder 60% af viewport højden, juster efter behov */
+    background-image: url('/images/new-styles.jpg'); /* Billede skal ligge i /public/images/ */
+    background-size: cover; /* Dækker hele containeren, beskærer efter behov */
+    background-position: center; /* Centreres */
+    background-repeat: no-repeat; /* Undgår gentagelse */
+    margin-top: 110px; /* Sørger for plads til fast navbar over */
+  }
+  

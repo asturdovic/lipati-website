@@ -1,0 +1,305 @@
+/* === Wrapper og typografi === */
+
+.ambassador-section {
+    padding: 5rem 2rem;
+    background-color: #FCFBF6;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+  
+  .ambassador-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.75rem;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+  }
+  
+  /* === Ambassadørgrid (kortvisning) === */
+  
+  .ambassador-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  .ambassador-card {
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .ambassador-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .ambassador-button:hover .ambassador-image {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 4px #e6e2db;
+  }
+  
+  .ambassador-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    border: 3px solid #1a1b1b;
+    transition: all 0.3s ease;
+  }
+  
+  .ambassador-name {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+  }
+  
+  .ambassador-name:hover {
+    color: #129ac7;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.2s ease;
+  }
+  
+  /* === Udvidet dropdown-sektion === */
+  
+  .ambassador-dropdown-wide {
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto 0;
+    padding: 3rem 2.5rem;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Simpel fade-in animation for dropdown */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .ambassador-dropdown-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  /* === Venstre kolonne: tekst === */
+  
+  .ambassador-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .ambassador-bio {
+    font-size: 1rem;
+    color: #1a1a1a;
+    line-height: 1.8;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ambassador-intro {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 90%;
+  }
+  
+  .ambassador-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid #1a1a1a;
+    width: fit-content;
+    transition: all 0.2s ease;
+  }
+  
+  .ambassador-link:hover {
+    opacity: 0.75;
+    transform: translateX(2px);
+  }
+  
+  /* === Højre kolonne: styles === */
+  
+  .ambassador-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .style-card {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    align-items: center;
+    background: #FAF9F5;
+    padding: 1.5rem;
+    border-radius: 18px;
+    border: 1px solid #dddcd8;
+    transition: background-color 0.3s ease;
+  }
+  
+  .style-card:hover {
+    background-color: #f3f2ef;
+  }
+  
+  .style-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px #eaeaea;
+  }
+  
+  .style-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: left;
+    flex: 1;
+  }
+  
+  .style-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  
+  .style-description {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0.4rem;
+  }
+  
+  /* === CTA-knap på styles === */
+  
+  .style-cta {
+    font-size: 0.8rem;
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    padding: 0.45rem 0.9rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+  
+  .style-cta:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  /* === Knap til at se alle ambassadører === */
+  
+  .view-all-container {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .view-all-btn {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .view-all-btn:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  /* === Responsiv styling til mobil === */
+  
+  @media (max-width: 768px) {
+    .ambassador-section {
+      padding: 4rem 1.5rem;
+    }
+  
+    .ambassador-title {
+      font-size: 2.2rem;
+    }
+  
+    .ambassador-dropdown-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .ambassador-left {
+      text-align: center;
+      align-items: center;
+    }
+  
+    .ambassador-bio,
+    .ambassador-intro {
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .ambassador-link {
+      margin: 1rem auto 0;
+      text-align: center;
+    }
+  
+    .style-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.2rem;
+    }
+  
+    .style-image {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+    }
+  
+    .style-info {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .style-cta {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  
+    .view-all-btn {
+      width: 100%;
+    }
+  }
+  

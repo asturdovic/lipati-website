@@ -1,0 +1,9 @@
+.community-hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url("/images/community-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 110px;
+}

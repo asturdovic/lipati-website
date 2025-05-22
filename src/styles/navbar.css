@@ -1,0 +1,243 @@
+/* === Overordnet navbar container – fast placeret øverst med skygge === */
+.navbar {
+  position: fixed;
+  top: 40px; /* Giver plads til evt. øverste bar */
+  width: 100%;
+  z-index: 1000;
+  background-color: #f3f1ec;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Grid container til navbarens indhold: logo, links og højre sektion */
+.nav-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* Venstre del (logo) justeres mod start */
+.nav-left {
+  justify-self: start;
+}
+
+/* Højre del (søgning + cart eller burger menu) */
+.nav-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo størrelse */
+.logo-img {
+  height: 5rem;
+}
+
+/* === Navigation links === */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  font-family: 'Anton', sans-serif;
+  justify-self: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Aktiv eller hoveret link får brand-farve */
+.nav-links li.active a,
+.nav-links li:hover a {
+  color: #16B2E6;
+}
+
+/* === Søgning og indkøbskurv ikon === */
+.nav-search {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  width: 180px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.nav-search:focus {
+  outline: none;
+  border-color: #16B2E6;
+}
+
+/* Indkøbskurv ikonet */
+.cart-icon {
+  color: black;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+/* === Hamburger menu ikon (skjult på desktop) === */
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* === Mega-menu dropdown (desktop) === */
+.mega-menu {
+  position: absolute;
+  top: 100%; /* Lige under navbar */
+  left: 0;
+  width: 100%;
+  background-color: #f3f1ec;
+  padding: 3rem 0;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Klik kan ikke ramme */
+}
+
+/* Aktiv mega-menu bliver synlig */
+.mega-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Indhold i mega-menuen: grid med kolonner */
+.mega-menu-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Kolonner i mega-menu */
+.mega-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Kolonne overskrifter */
+.mega-column h4 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+/* Mega-menu links */
+.mega-column a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #444;
+  transition: color 0.2s ease;
+}
+
+.mega-column a:hover {
+  color: #16B2E6;
+}
+
+/* Billede i mega-menu (promobillede) */
+.dropdown-img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.dropdown-img:hover {
+  transform: scale(1.03);
+}
+
+/* === Responsive styles: Mobil === */
+@media (max-width: 768px) {
+  /* Navbar container bliver flexbox */
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem 2rem;
+  }
+
+  /* Logo lidt mindre */
+  .logo-img {
+    height: 4.5rem;
+  }
+
+  /* Skjul søgefelt og kurv-ikon på mobil */
+  .nav-search,
+  .cart-icon {
+    display: none;
+  }
+
+  /* Vis hamburger-ikon */
+  .hamburger-icon {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  /* Holder hamburger-ikon */
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Centrer venstre side (logo) */
+  .nav-left {
+    justify-self: center;
+  }
+
+  /* Mobilmenu dropdown */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f3f1ec;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    display: none;
+    z-index: 1000;
+  }
+
+  /* Åben mobilmenu */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Skjul mega-menu på mobil */
+  .mega-menu {
+    display: none !important;
+  }
+}

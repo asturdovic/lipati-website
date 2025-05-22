@@ -1,0 +1,119 @@
+/* === Sektion: Statistikker for community og engagement === */
+.stats-section {
+    background-color: #f3f1ec;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+  
+  /* Wrapper der indeholder alle statistikkort */
+  .stats-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Individuelt statistik-kort */
+  .stat-card {
+    background-color: #fff;
+    border-radius: 20px;
+    border-top: 4px solid #0a0b0b;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    max-width: 250px;
+    flex: 1 1 220px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover-effekt der løfter kortet */
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Emoji eller ikon øverst */
+  .emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  /* Ikon (billede) */
+  .stat-icon {
+    height: 5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Stor, fed talvisning */
+  .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+    font-family: "Anton", sans-serif;
+  }
+  
+  /* Undertekst til tallet */
+  .stat-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  /* Supplerende tekst (valgfri) */
+  .stat-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  /* === Responsivt: Tablet og mobil === */
+  @media (max-width: 768px) {
+    .stats-section {
+      padding: 4rem 1.5rem;
+    }
+  
+    .stats-wrapper {
+      gap: 2rem;
+    }
+  
+    .stat-card {
+      max-width: 100%;
+      flex: 1 1 100%;
+      padding: 1.8rem 2rem;
+    }
+  
+    .stat-number {
+      font-size: 1.7rem;
+    }
+  
+    .stat-text,
+    .stat-label {
+      font-size: 1rem;
+    }
+  
+    .emoji {
+      font-size: 2rem;
+    }
+  
+    .stat-icon {
+      height: 3.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stat-number {
+      font-size: 1.5rem;
+    }
+  
+    .stat-text {
+      font-size: 0.95rem;
+    }
+  
+    .stat-icon {
+      height: 3rem;
+    }
+  }
+  

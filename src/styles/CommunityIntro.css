@@ -1,0 +1,122 @@
+/* === Wrapper for hele sektionen === */
+.community-intro {
+  padding: 6rem 2rem;
+  background-color: #fcfbf6; /* Blød, varm off-white */
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* === Indholdsområde med tekst og billede === */
+.community-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  gap: 4rem;
+  flex-wrap: wrap; /* Gør layoutet responsivt */
+}
+
+/* === Tekstkolonne === */
+.text-section {
+  flex: 1 1 480px;
+}
+
+/* Overskrift */
+.text-section h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* Brødtekst */
+.text-section p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  max-width: 600px;
+}
+
+/* Fremhævet statement eller citat */
+.text-section .quote {
+  font-style: italic;
+  color: #777;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* === Billedkolonne === */
+.image-section {
+  flex: 1 1 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Billede med styling og hover-effekt */
+.image-section img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-section img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* === Responsiv tilpasning til mobil === */
+@media (max-width: 768px) {
+  .community-intro {
+    padding: 4rem 1.5rem;
+  }
+
+  .community-content {
+    flex-direction: column-reverse; /* Vis tekst før billede */
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .text-section {
+    flex: unset;
+    text-align: center;
+    width: 100%;
+  }
+
+  .text-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .text-section p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .text-section .quote {
+    font-size: 0.95rem;
+  }
+
+  .image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    display: block;
+  }
+}

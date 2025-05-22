@@ -1,0 +1,59 @@
+/* === Wrapper der fylder hele browserbredden === */
+.image-slider-wrapper {
+  width: 100vw;      /* Fylder hele viewport-bredden */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Skjuler horisontal scrollbar */
+}
+
+/* Selve Swiper-slideren */
+.image-slider {
+  width: 100%;
+  height: auto;
+  scroll-snap-type: x mandatory; /* Snap-effekt til slides */
+  padding: 0; /* Fjern ekstra padding */
+}
+
+/* Hvert enkelt slide */
+.custom-slide {
+  width: 40vw;           /* 40% af viewport bredde pr slide */
+  max-width: none;
+  flex-shrink: 0;        /* Forhindrer at slides krymper */
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start; /* Snapper til slide start */
+  padding-right: 2vw;    /* Lidt luft mellem slides */
+}
+
+/* Billede i hvert slide */
+.custom-slide img {
+  width: 100%;
+  height: 50vh;          /* 50% af viewport højde */
+  object-fit: cover;     /* Beskærer og fylder billedet */
+  object-position: center;
+  display: block;
+}
+
+/* Tekst over billedet, centreret */
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-family: "Anton", sans-serif;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Læsbarhed */
+  z-index: 2;
+  pointer-events: none; /* Klik går igennem teksten */
+  text-align: center;
+}
+
+/* Overlay for at sikre tekstkontrast */
+.custom-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}

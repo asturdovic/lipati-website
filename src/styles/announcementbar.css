@@ -1,0 +1,12 @@
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #19191a;
+    padding: 8px 0;
+    color: #FBF9E8;
+    text-align: center;
+    z-index: 1001; /* 👈 højere end navbar */
+  }
+  

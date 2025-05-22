@@ -1,0 +1,182 @@
+/* === Wrapper for hele sektionen med udvalgte produkter === */
+.featured-products {
+  padding: 5rem 0;
+  background-color: #ffffff;
+}
+
+/* Container til scroll og kortene */
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Selve scrolleområdet med fleksible kort */
+.scroll-wrapper {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* Snap til hvert kort */
+  padding: 0 2rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Skjuler scrollbar i Firefox */
+  overflow-y: visible; /* Forhindrer vertikal scroll */
+}
+
+/* Skjuler scrollbar i Webkit-browsere (Chrome, Safari) */
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hvert enkelt produktkort */
+.product-card {
+  flex: 0 0 auto; /* Sikrer fast bredde uden fleksvækst */
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  scroll-snap-align: start; /* Starter snap ved kortets start */
+  position: relative; /* For absolut positionering af CTA */
+}
+
+/* Wrapper til billede og knap */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+
+/* Produktbilledet fylder hele wrapperen */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Scroll pile til navigation --- */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: black;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* Placering af venstre/højre pil */
+.scroll-arrow.left {
+  left: 12px;
+}
+
+.scroll-arrow.right {
+  right: 12px;
+}
+
+/* CTA-knap der ligger over billedet */
+.product-cta {
+  font-size: 0.8rem;
+  background-color: transparent;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  transition: all 0.2s ease;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Hover-effekt på knappen */
+.product-cta:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* === Responsivt design === */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .product-card {
+    width: 300px;
+  }
+
+  .image-wrapper {
+    height: 400px;
+  }
+}
+
+/* Mindre tablets og store mobiler */
+@media (max-width: 768px) {
+  .scroll-wrapper {
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .product-card {
+    width: 260px;
+  }
+
+  .image-wrapper {
+    height: 360px;
+  }
+
+  .product-cta {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .scroll-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobil */
+@media (max-width: 480px) {
+  .scroll-wrapper {
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .product-card {
+    width: 220px;
+  }
+
+  .image-wrapper {
+    height: 300px;
+  }
+
+  /* Skift CTA til mørk baggrund på mobil for bedre kontrast */
+  .product-cta {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 0.55rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .product-cta:hover {
+    background-color: #333; /* Let lysere ved hover */
+  }
+
+  /* Skjul scroll-pilene på mobil – brug swipe */
+  .scroll-arrow {
+    display: none;
+  }
+}

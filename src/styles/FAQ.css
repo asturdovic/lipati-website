@@ -1,0 +1,125 @@
+/* === FAQ-sektionens overordnede container === */
+.faq-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 11.5rem 1.5rem 4rem; /* God top-padding for afstand til navbar eller header */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    scroll-margin-top: 12rem; /* Sikrer afstand ved ankre */
+  }
+  
+  /* FAQ header (titel + intro) */
+  .faq-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  /* Underoverskrift */
+  .faq-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    color: #7c6f57;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  /* Hovedtitel */
+  .faq-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+  
+  /* Beskrivende tekst under titel */
+  .faq-description {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  
+  /* Container for alle FAQ-spørgsmål */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Individuelle FAQ-punkter */
+  .faq-item {
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 1rem;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    border-left: 4px solid transparent;
+    padding-left: 0;
+  }
+  
+  /* Åbnet FAQ-item */
+  .faq-item.open {
+    background-color: #faf9f6;
+    border-left: 4px solid #7c6f57;
+    padding-left: 1rem;
+  }
+  
+  /* Spørgsmål som knap */
+  .faq-question {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a1a1a;
+    transition: color 0.2s ease;
+  }
+  
+  /* Hover på spørgsmål */
+  .faq-question:hover {
+    color: #16B2E6;
+  }
+  
+  /* Ikonet (plus/minus) */
+  .faq-icon {
+    font-size: 1.5rem;
+    color: #999;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Rotér ikon og skift farve når åbnet */
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    color: #7c6f57;
+  }
+  
+  /* Svartekst, synlig ved åben FAQ */
+  .faq-answer {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    max-height: 1000px; /* Stort nok til indhold */
+    opacity: 1;
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+  
+  /* Skjult svartekst når lukket */
+  .faq-item:not(.open) .faq-answer {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  

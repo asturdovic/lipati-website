@@ -1,0 +1,143 @@
+/* === Wrapper for hele spotlight-sektionen === */
+.product-spotlight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f1ec; /* Lys, neutral baggrund */
+    padding: 6rem 5%;           /* Store padding omkring */
+    gap: 4rem;                  /* Luft mellem tekst og billede */
+    flex-wrap: wrap;            /* Gør det responsivt med wrapping */
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  /* Tekstsektionen i spotlightet */
+  .spotlight-text {
+    flex: 1;                   /* Tager fleksibel plads */
+    max-width: 520px;          /* Maks bredde for bedre læsbarhed */
+  }
+  
+  /* Overskrift */
+  .spotlight-text h2 {
+    font-size: 2.8rem;
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 1rem;
+    color: #121213;
+    line-height: 1.1;
+  }
+  
+  /* Beskrivende tekst */
+  .spotlight-text p {
+    font-size: 1.05rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  /* CTA-knap styling */
+  .spotlight-text button {
+    background-color: #121213;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 999px;      /* Rund knap */
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Hover-effekt på knap: lidt zoom og skygge */
+  .spotlight-text button:hover {
+    background-color: #1a1a1a;
+    transform: scale(1.04) translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Billedsektionen */
+  .spotlight-image {
+    flex: 1;                  /* Fylder resten af pladsen */
+    text-align: center;
+  }
+  
+  /* Billede styling */
+  .spotlight-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover-effekt på billede: let zoom */
+  .spotlight-image img:hover {
+    transform: scale(1.015);
+  }
+  
+  /* === Responsivt design === */
+  
+  /* Tablet og mindre skærme */
+  @media (max-width: 768px) {
+    .product-spotlight {
+      flex-direction: column;
+      padding: 4rem 1.5rem;
+      text-align: center;
+      gap: 2.5rem;
+    }
+  
+    .spotlight-text {
+      max-width: 100%;
+    }
+  
+    .spotlight-text h2 {
+      font-size: 2.2rem;
+    }
+  
+    .spotlight-text p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .spotlight-text button {
+      width: 100%;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+  
+    .spotlight-image {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  
+    .spotlight-image img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  
+  /* Mindre mobil */
+  @media (max-width: 480px) {
+    .spotlight-text h2 {
+      font-size: 1.9rem;
+    }
+  
+    .spotlight-text p {
+      font-size: 0.95rem;
+    }
+  
+    .spotlight-text button {
+      font-size: 0.9rem;
+      padding: 0.9rem 1.5rem;
+    }
+  }
+  
